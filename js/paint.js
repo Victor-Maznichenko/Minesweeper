@@ -2,9 +2,6 @@ import { canvas, arrayCells, cellHeight, cellWidth, canvasWidth, canvasHeight, c
 import { isGameOver } from './Cell.js'
 
 let context = canvas.getContext("2d");
-const BombIco = new Image();
-BombIco.src = "../images/bomb.png";
-
 
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
@@ -27,6 +24,8 @@ function drawCells() {
             fillRect(i, j)
             drawRect(i, j);
             if (arrayCells[i][j].isBomb) {
+                const BombIco = new Image();
+                BombIco.src = "../images/bomb.png";
                 const bombWidth = cellWidth * 0.7;
                 const bombHeight = cellHeight * 0.7;
                 context.fillStyle = "#be3a25";
@@ -47,9 +46,8 @@ function drawCells() {
 }
 
 function paint() {
-    BombIco.onload = () => {
-        drawCells();
-    }
+    // drawBombs();
+    drawCells();
 }
 
 export default paint;
