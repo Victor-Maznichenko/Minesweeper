@@ -47,7 +47,7 @@ function drawCells() {
 }
 
 function paint() {
-    BombIco.onload{
+    BombIco.onload = () => {
         drawCells();
     }
 }
