@@ -47,8 +47,9 @@ function drawCells() {
 }
 
 function paint() {
-    // drawBombs();
-    drawCells();
+    BombIco.onload{
+        drawCells();
+    }
 }
 
 export default paint;
